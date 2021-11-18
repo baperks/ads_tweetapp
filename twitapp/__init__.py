@@ -1,6 +1,7 @@
 # Flask app for Twitter
 import os
-from flask import Flask, app, render_template
+
+from flask import Flask
 # from flask_bootstrap import Bootstrap
 
 def create_app(test_config=None):
@@ -25,8 +26,9 @@ def create_app(test_config=None):
 # bootstrap = Bootstrap(app)
 
     @app.route('/hello')
+
     def hello():
-        return render_template('index.html')
+        return '<h1>Hello World!</h1>'
 
 
     return app
