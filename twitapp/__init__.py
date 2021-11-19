@@ -1,8 +1,10 @@
 # Flask app for Twitter
 import os
 
-from flask import Flask
-# from flask_bootstrap import Bootstrap
+from flask import Flask, render_template, url_for
+from flask_bootstrap import Bootstrap
+
+bootstrap = Bootstrap()
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -10,6 +12,10 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'twitapp.sqlite'),
     )
+
+    bootstrap.init_app(app)
+    
+
     if test_config is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile('config.py', silent=True)
@@ -22,13 +28,19 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-
 # bootstrap = Bootstrap(app)
 
-    @app.route('/hello')
+    @app.route('/')
 
-    def hello():
-        return '<h1>Hello World!</h1>'
+    def dash():
+        return render_template("dash.html")
 
+    # @app.route('/dash')
+    # def dash():
+    #     return render_template("dash.html")
 
     return app
+# app = create_app()
+
+# if __name__ == "__main__":
+#     create_app().run()
