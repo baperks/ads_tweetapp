@@ -31,13 +31,12 @@ def create_app(test_config=None):
 # bootstrap = Bootstrap(app)
 
     @app.route('/')
-
     def dash():
         return render_template("dash.html")
 
-    # @app.route('/dash')
-    # def dash():
-    #     return render_template("dash.html")
+    @app.route('/about')
+    def about():
+        return render_template("about.html")
 
     return app
 # app = create_app()

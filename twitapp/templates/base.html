@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Twitter App</title>
+    {% block head %}
+    <title>Teleonymy</title>
+    {% endblock %}
 
     <!-- Mobile sizing recommended by Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,43 +16,53 @@
 
     <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon.ico') }}"> -->
 
-    {% block head %}
-    {{ super() }}
+
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
-    {% endblock %}
+    
 
 </head>
 
-{% block navbar %}
+
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #38302E">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Twitter Sentiment Analysis</a>
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='images/favicon-32x32.png') }}" width="30" height="28">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">ABOUT</a>
-                    </li>
-                </ul>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/about">ABOUT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 </header>
-{% endblock %}
+
 
 <body style="background-color: #F6F7F8">
 
-    <h1 align="center">Twitter Sentiment Analysis</h1>
+    <div class="container" style="padding-top: 20px">
+        <div class="row justify-content-start">
+            <div class="col align-self-start">
+                <h1>Twitter Sentiment Analysis</h1>
+            </div>
+        </div>
+    </div>
     <div class="container" align="center" style="min-height: 100%; margin-top: 35px;">
     {% block body %} {% endblock %}
-
     </div>
 
     <!-- Bootstrap JavaScript bundle -->
