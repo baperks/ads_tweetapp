@@ -1,5 +1,6 @@
 # Flask app for Twitter
 import os
+import json
 
 from flask import Flask, render_template, url_for
 from flask_bootstrap import Bootstrap
@@ -37,6 +38,18 @@ def create_app(test_config=None):
     @app.route('/about')
     def about():
         return render_template("about.html")
+    
+    @app.route('/cloud')
+    def cloud():
+        return render_template("cloud.html")
+
+    @app.route('/vader')
+    def vader():
+        with open('vader.json') as json_file:
+            graphJSON = json.load(json_file)
+        return render_template("vader.html", graphJSON=graphJSON)
+
+
 
     return app
 # app = create_app()

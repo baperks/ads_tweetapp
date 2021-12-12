@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     {% block head %}
-    <title>Teleonymy</title>
+    <title>Taco Bell Tweets</title>
     {% endblock %}
 
     <!-- Mobile sizing recommended by Bootstrap -->
@@ -24,7 +24,7 @@
 </head>
 
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #38302E">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #030004"> <!-- #38302E -->
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <img src="{{ url_for('static', filename='images/favicon-32x32.png') }}" width="30" height="28">
@@ -37,10 +37,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/">HOME</a>
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="/about">ABOUT</a>
+                                <a class="nav-link" aria-current="page" href="/about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/cloud">WordCloud</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/vader">Sentiments</a>
                             </li>
                         </ul>
                     </div>
@@ -51,12 +57,12 @@
 </header>
 
 
-<body style="background-color: #F6F7F8">
+<body style="background-color: #0e0018"> <!-- whitish paper - #F6F7F8 -->
 
     <div class="container" style="padding-top: 20px">
         <div class="row justify-content-start">
             <div class="col align-self-start">
-                <h1>Twitter Sentiment Analysis</h1>
+                <h1>Taco Bell Tweet Analysis</h1>
             </div>
         </div>
     </div>
