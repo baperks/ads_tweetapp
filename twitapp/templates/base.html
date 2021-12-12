@@ -16,7 +16,10 @@
 
     <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon.ico') }}"> -->
 
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
     
@@ -32,6 +35,13 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="container">
+                <div class="container-fluid justify-content-center">
+                    <a class="navbar-brand" href="/">
+                        <nav class="title" style="color: #d6d5db; text-transform: uppercase;">Taco Tweets</nav>
+                    </a>
+                </div>
+            </div>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,17 +67,23 @@
 </header>
 
 
-<body style="background-color: #0e0018"> <!-- whitish paper - #F6F7F8 -->
+<body style="background-color: #d6d5db"> <!-- whitish paper - #F6F7F8 -->
 
-    <div class="container" style="padding-top: 20px">
+    <!-- <div class="container" style="padding-top: 20px">
         <div class="row justify-content-start">
             <div class="col align-self-start">
-                <h1>Taco Bell Tweet Analysis</h1>
+                <h1>Taco Bell on Twitter</h1>
             </div>
         </div>
+    </div> -->
+    <div class="container" style="padding-left: 20px; padding-top: 15px">
+        {% block body %} {% endblock %}
     </div>
     <div class="container" align="center" style="min-height: 100%; margin-top: 35px;">
-    {% block body %} {% endblock %}
+        {% block chart %} {% endblock %}
+    <div class="container" align="left" style="min-height: 30%; margin-top: 35px">
+        {% block cloud %} {% endblock %}
+    </div>
     </div>
 
     <!-- Bootstrap JavaScript bundle -->

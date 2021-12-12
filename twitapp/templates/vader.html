@@ -8,9 +8,18 @@
 
 {% block body %}
 <body>
-  <h1>Hello Plotly (but not Dash)</h1>
-  <div id='chart' class='chart'”></div>
+  <h1>Taco Bell Sentiment from Twitter</h1>
+    <ul>
+      <li>Tweets were fetched from the Twitter API 2.x between November 21 and  November 27, 2021</li>
+      <li>Use the rangeslider on the timeline below to see details by time.</li>
+    </ul>
 </body>
+{% endblock %}
+
+{% block chart %}
+<div id='chart' class='chart'”></div>
+
+
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.2.1/d3.min.js"></script>

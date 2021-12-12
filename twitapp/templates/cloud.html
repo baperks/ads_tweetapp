@@ -1,7 +1,38 @@
 {% extends "base.html" %}
 
+{% import "bootstrap/wtf.html" as wtf %}
 {% block head %}
 
 <title>WordCloud Generator</title>
+
+{% endblock %}
+
+{% block body %}
+<body>
+    <h1>Word2Vec WordClouds</h1>
+      <ul>
+        <li>Tweets were fetched from the Twitter API 2.x between November 21 and  November 27, 2021</li>
+        <li>Select a search term from the dropdown list to see a wordcloud based on <strong>word2Vec word embeddings.</strong></li>
+        <li>These are the result of running a <strong>Gensim Word2Vec Model</strong> on the accumulated tweets.</li>
+      </ul>
+  </body>
+
+{% endblock %}
+
+{% block cloud %}
+
+<!-- <select>
+    {% for each in dropdown_list %}
+        <option value="{{each}}">{{each}}</option>
+    {% endfor %}
+</select> -->
+<!-- <div class="container" align="left" style="min-height: 30%; margin-top: 35px"> -->
+{{ wtf.quick_form(form) }}
+<!-- </div> -->
+<div class="img-fluid.max-width: 100%; height: auto">
+    <img id="picture" src="data:image/jpeg;base64,{{ image }}">
+</div>
+
+<!--Need a selection drop down with choices populated; a frame in which to view the wordcloud image.-->
 
 {% endblock %}
