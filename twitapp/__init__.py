@@ -49,7 +49,7 @@ def create_app(test_config=None):
     
     @app.route('/cloud', methods=['GET', 'POST'])
     def cloud():
-
+        
         name = None
         form = NameForm()
         form.choices = name
