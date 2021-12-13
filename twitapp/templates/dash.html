@@ -15,13 +15,13 @@
         <li>An automated Python script culled tweets about <b>Taco Bell</b> from the <strong>Twitter API v.2.x</strong> for several days as an example set.</li>
         <li>A number of exploratory analysis steps were taken to determine the best course for the project. After collection and storage in a <strong>SQLite</strong> database, the tweets were cleaned of unnecessary characters and generally put in a tokenized form.</li>
         <li>Other models, like the <strong>FastText model</strong> for analyzing word vectors and similarities, were explored, and decisions were made in terms of project scope and desired features.</li>
-        <li>The <strong><a href='cloud.html'>WordCloud</a></strong> page takes your input and produces a fresh WordCloud image. Each choice in the dropdown menu is run through an instantiated <strong>Word2Vec model</strong> which generates word vectors. Then, the <strong>wordcloud</strong> package draws a WordCloud of the words most similar to your choice from the tweet corpus. The Word2Vec model is implemented using <strong>Gensim's</strong> packages.</li>
-        <li>The <strong><a href='vader.html'>Sentiments</a></strong> tab displays an interactive chart of tweets. Use the slider to zero in on a timeframe of interest.</li>
+        <li>The <a href={{url_for('cloud')}}><strong>WordCloud</strong></a> page takes your input and produces a fresh WordCloud image. Each choice in the dropdown menu is run through an instantiated <strong>Word2Vec model</strong> which generates word vectors. Then, the <strong>wordcloud</strong> package draws a WordCloud of the words most similar to your choice from the tweet corpus. The Word2Vec model is implemented using <strong>Gensim's</strong> packages.</li>
+        <li>The <a href={{url_for('vader')}}><strong>Sentiments</strong></a> tab displays an interactive chart of tweets. Use the slider to zero in on a timeframe of interest.</li>
         <li>For this analysis, the <strong>VADER</strong> sentiment analysis lexicon was used to analyze the tweets. Data was rolled up to 5-minute increments to improve performance and usability of the chart. VADER is an unsupervised method of finding polarity of tweets as "documents" in a corpus. An unsupervised method was necessary since the tweets did not come with labels.</li>
         <li>The website is deployed with Flask, on the Heroku platform.</li>
     </ul>
 <p>Written and implmented by <emphasis>Ben Perkins, 2021.</emphasis></p>
-<i class="bi bi-github"><a href='https://github.com/baperks/ads_tweetapp'></a></i>
-<a href="https://twitter.com/BaPerks><i class="bi bi-twitter"></i></a>
+<a href='https://github.com/baperks/ads_tweetapp'>Project Github</a>
+<a href="https://twitter.com/BaPerks>Twitter</a>
 
 {% endblock %}
