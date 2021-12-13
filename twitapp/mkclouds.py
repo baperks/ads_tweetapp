@@ -1,14 +1,4 @@
-# from os import path
-# from PIL import Image
-# import numpy as np
-# import matplotlib.pyplot as plt
-# # import os
-
-# from wordcloud import WordCloud, ImageColorGenerator
-# from gensim.models import KeyedVectors
-
-# # Read the whole text.
-# IMG_DIR = 'twitapp/static/images/'
+# Function script to generate the WordCloud
 
 def makeCloud(term_choice):
     from os import path
@@ -46,6 +36,7 @@ def makeCloud(term_choice):
     simString = " ".join(sims)
     wc.generate(simString)
 
+    # Useful function for deriving a greyscale image; uncomment to use, put grey_color_func in color_func parameter in imshow function.
     # def grey_color_func(word, font_size, position, orientation, random_state=None,
     #                     **kwargs):
     #     return "hsl(0, 0%%, %d%%)" % np.random.randint(90, 100)
@@ -62,9 +53,5 @@ def makeCloud(term_choice):
     ax = fig.subplots()
     # plt.figure(figsize=(15,20))
     ax.imshow(wc.recolor(color_func=taco_colors), interpolation='bilinear')
-    # fig.axis("off")
-    # plt.figure(figsize=(12,8))
-    # plt.imshow(taco_mask, plt.cm.copper, interpolation='bilinear')
-    # plt.axis("off")
-    # plt.show()
+  
     return fig

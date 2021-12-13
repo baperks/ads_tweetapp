@@ -1,19 +1,25 @@
 {% extends "base.html" %}
 
+{% block head %}
+
+<title>Taco Tweets</title>
+
+{% endblock %}
+
 {% block body %}
-<h1>Tweets on Taco Bell</h1>
+
+<h1>About the Project</h1>
 <p>This application is based on Natural Language Processing tasks carried out on a set of Twitter's tweet data. The data was pulled in an automated fashion over the course of about a week in November 2021.</p>
-<!-- <nav class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">HOME</button>
-    <button class="nav-link" id="nav-prep-tab" data-bs-toggle="tab" data-bs-target="#nav-prep" type="button" role="tab" aria-controls="nav-prep" aria-selected="false">Data Prep</button>
-    <button class="nav-link" id="nav-analysis-tab" data-bs-toggle="tab" data-bs-target="#nav-analysis" type="button" role="tab" aria-controls="nav-analysis" aria-selected="false">Analysis</button>
-</nav>
-
-
-<div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
-    <div class="tab-pane fade" id="nav-vecs" role="tabpanel" aria-labelledby="nav-vecs-tab">Taco Bell WordCloud</div>
-    <div class="tab-pane fade" id="nav-sents" role="tabpanel" aria-labelledby="nav-sents-tab">Sentiment Analysis</div>
-</div> -->
+    <ul>
+        <li>Tweets included ID, text, created time, and language.</li>
+        <li>An automated Python script culled tweets about <b>Taco Bell</b> from the <strong>Twitter API v.2.x</strong> for several days as an example set.</li>
+        <li>A number of exploratory analysis steps were taken to determine the best course for the project. After collection and storage in a <strong>SQLite</strong> database, the tweets were cleaned of unnecessary characters and generally put in a tokenized form.</li>
+        <li>Other models, like the <strong>FastText model</strong> for analyzing word vectors and similarities, were explored, and decisions were made in terms of project scope and desired features.</li>
+        <li>The <strong><a href='cloud.html'>WordCloud</a></strong> page takes your input and produces a fresh WordCloud image. Each choice in the dropdown menu is run through an instantiated <strong>Word2Vec model</strong> which generates word vectors. Then, the <strong>wordcloud</strong> package draws a WordCloud of the words most similar to your choice from the tweet corpus. The Word2Vec model is implemented using <strong>Gensim's</strong> packages.</li>
+        <li>The <strong><a href='vader.html'>Sentiments</a></strong> tab displays an interactive chart of tweets. Use the slider to zero in on a timeframe of interest.</li>
+        <li>For this analysis, the <strong>VADER</strong> sentiment analysis lexicon was used to analyze the tweets. Data was rolled up to 5-minute increments to improve performance and usability of the chart. VADER is an unsupervised method of finding polarity of tweets as "documents" in a corpus. An unsupervised method was necessary since the tweets did not come with labels.</li>
+        <li>The website is deployed with Flask, on the Heroku platform.</li>
+    </ul>
+<p>Written and implmented by Ben Perkins, 2021.</p>
 
 {% endblock %}

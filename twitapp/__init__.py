@@ -1,7 +1,7 @@
-# Flask app for Twitter
+# Flask app for Twitter Application
 import os
 import json
-# import mkclouds as mc
+
 from twitapp.mkclouds import makeCloud
 import base64
 from io import BytesIO
@@ -33,7 +33,6 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-# bootstrap = Bootstrap(app)
     class NameForm(FlaskForm):
         name = SelectField('Click to select a search term:', validators=[DataRequired()], choices=['love', 'hate', 'good', 'disgusting', 'awful', 'best', 'awesome', 'dinner', 'lunch', 'late', 'really', 'gordita', 'chalupa', 'drunk', 'pizza'])
         submit = SubmitField('Submit')
@@ -44,14 +43,13 @@ def create_app(test_config=None):
     def dash():
         return render_template("dash.html")
 
-    @app.route('/about')
-    def about():
-        return render_template("about.html")
+    # @app.route('/about')
+    # def about():
+    #     return render_template("about.html")
     
     @app.route('/cloud', methods=['GET', 'POST'])
     def cloud():
-        # drop_list = ['love', 'hate', 'good', 'disgusting', 'awful', 'best', 'awesome', 'dinner', 'lunch', 'late', 'really', 'gordita', 'chalupa', 'drunk', 'pizza']
-        # return render_template("cloud.html", dropdown_list=drop_list)
+
         name = None
         form = NameForm()
         form.choices = name
@@ -75,7 +73,4 @@ def create_app(test_config=None):
 
 
     return app
-# app = create_app()
 
-# if __name__ == "__main__":
-#     create_app().run()
