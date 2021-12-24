@@ -18,9 +18,9 @@
         <li>The <a href={{url_for('cloud')}}><strong>WordCloud</strong></a> page takes your input and produces a fresh WordCloud image. Each choice in the dropdown menu is run through an instantiated <strong>Word2Vec model</strong> which generates word vectors. Then, the <strong>wordcloud</strong> package draws a WordCloud of the words most similar to your choice from the tweet corpus. The Word2Vec model is implemented using <strong>Gensim's</strong> packages.</li>
         <li>The <a href={{url_for('vader')}}><strong>Sentiments</strong></a> tab displays an interactive chart of tweets. Use the slider to zero in on a timeframe of interest.</li>
         <li>For this analysis, the <strong>VADER</strong> sentiment analysis lexicon was used to analyze the tweets. Data was rolled up to 5-minute increments to improve performance and usability of the chart. VADER is an unsupervised method of finding polarity of tweets as "documents" in a corpus. An unsupervised method was necessary since the tweets did not come with labels.</li>
-        <li>The website is deployed with Flask, on the Heroku platform.</li>
+        <li>The website is written with Flask, deployed on the Heroku platform.</li>
     </ul>
-<p>Written and implmented by <emphasis>Ben Perkins, 2021.</emphasis></p>
+<p>Written and implemented by <emphasis>Ben Perkins, 2021.</emphasis></p>
 <a href='https://github.com/baperks/ads_tweetapp'>Project Github</a>
 <a href="https://twitter.com/BaPerks">Twitter</a>
 
