@@ -58,7 +58,7 @@ def create_app(test_config=None):
             form.name.data = ''
             if request.method == 'POST':
                 buf = BytesIO()
-                makeCloud(name).savefig(buf, format="png")
+                makeCloud(name).savefig(buf, format="png", bbox_inches='tight', pad_inches=0)
                 data = base64.b64encode(buf.getbuffer()).decode("ascii")
                 return render_template('cloud.html', image=data, form=form, name=name)
             elif request.method == 'GET':

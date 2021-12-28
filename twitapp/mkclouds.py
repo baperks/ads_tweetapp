@@ -49,9 +49,8 @@ def makeCloud(term_choice):
 
 
     # Size, style, and show
-    fig = Figure(figsize=(10, 14))
+    fig = Figure(figsize=(12, 18))
     ax = fig.subplots()
-    # plt.figure(figsize=(15,20))
     ax.imshow(wc.recolor(color_func=taco_colors), interpolation='bilinear')
-  
+    ax.axis('off')
     return fig
