@@ -43,9 +43,6 @@ def create_app(test_config=None):
     def dash():
         return render_template("dash.html")
 
-    # @app.route('/about')
-    # def about():
-    #     return render_template("about.html")
     
     @app.route('/cloud', methods=['GET', 'POST'])
     def cloud():

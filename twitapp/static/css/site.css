@@ -7,3 +7,7 @@ body {
     color: #49414c;
     font-family: 'Source Sans Pro', sans-serif;
 }
+
+#name {
+    appearance: menulist;
+}
